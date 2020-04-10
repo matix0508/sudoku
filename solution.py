@@ -162,23 +162,7 @@ What would you like to do?
 
 
 
-def solution(bo):
 
-    i = 0
-    while i != len(blank):
-
-        (x, y) = blank[i]
-        find_num(bo, x, y)
-        if bo[x][y] >= 10:
-            bo[x][y] = 0
-            i -= 1
-        else:
-            i += 1
-
-        if i < 0:
-            print("SUDOKU has no solution")
-            break
-    return bo
         # print_board(bo)
 
 blank = []

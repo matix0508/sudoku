@@ -47,7 +47,7 @@ class SudokuBoard(object):
 
             for c in line:
                 if not c.isdigit():
-                    raise SudokuError(
+                    raise SudokuErr,or(
                         "Valid characters for a sudoku puzzle must be in 0-9"
                     )
                 board[-1].append(int(c))
@@ -62,6 +62,8 @@ class SudokuGame(object):
     def __init__(self, board_file):
         self.board_file = board_file
         self.start_puzzle = SudokuBoard(board_file).board
+        self.game_over = False
+        self.puzzle = []
 
     def start(self):
         self.game_over = False
@@ -225,6 +227,7 @@ class SudokuUI(Frame):
             text="You win!", tags="winner",
             fill="white", font=("Arial", 32)
         )
+
 
 if __name__ == "__main__":
     new_game()
